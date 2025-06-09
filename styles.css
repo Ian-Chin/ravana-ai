@@ -42,10 +42,18 @@ nav {
     text-decoration: none;
 }
 
-.logo::before {
-    content: "🤖";
-    font-size: 2rem;
+.logo-image {
+    width: 50px;  /* Add this line */
+    height: 50px; /* Add this line */
+    display: flex; /* Add this line */
+    align-items: center;
     animation: pulse 2s infinite;
+}
+
+.logo-image img {  /* Add this block */
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .nav-links {

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Ravana Chatbot</title>
+    <link rel="icon" href="pictures/logo_icon.png" type="image/png">
     <style>
         * {
             margin: 0;
@@ -49,13 +50,24 @@
             font-weight: 700;
             color: #ff6b00;
             text-decoration: none;
-            z-index: 1001;
         }
 
-        .logo::before {
-            content: "🤖";
-            font-size: 2rem;
+        .logo-image {
+            width: 50px;
+            /* Add this line */
+            height: 50px;
+            /* Add this line */
+            display: flex;
+            /* Add this line */
+            align-items: center;
             animation: pulse 2s infinite;
+        }
+
+        .logo-image img {
+            /* Add this block */
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
 
         .nav-links {
@@ -474,21 +486,6 @@
             font-size: 1.1rem;
         }
 
-        /* Footer */
-        .footer {
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a0f08 100%);
-            border-top: 1px solid rgba(255, 107, 0, 0.2);
-            padding: 2rem 0;
-            text-align: center;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            color: #cccccc;
-        }
-
         /* Animations */
         @keyframes pulse {
 
@@ -716,13 +713,240 @@
                 font-size: 6rem;
             }
         }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 107, 0, 0.1);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 107, 0, 0.5);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 107, 0, 0.7);
+        }
+
+        .footer {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0f08 100%);
+            border-top: 1px solid rgba(255, 107, 0, 0.2);
+            padding: 4rem 0 0;
+            margin-top: 5rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            color: #ff6b00;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: -0.5rem;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: linear-gradient(90deg, #ff6b00, #ff8533);
+            border-radius: 1px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ff6b00;
+        }
+
+        .footer-description {
+            color: #cccccc;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            max-width: 300px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 107, 0, 0.1);
+            border: 1px solid rgba(255, 107, 0, 0.3);
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: rgba(255, 107, 0, 0.2);
+            border-color: #ff6b00;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 107, 0, 0.3);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: #cccccc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .footer-links a::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #ff6b00;
+            font-size: 0.7rem;
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #ff6b00;
+            padding-left: 1.5rem;
+        }
+
+        .footer-links a:hover::before {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .newsletter-description {
+            color: #cccccc;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .newsletter-input {
+            padding: 1rem;
+            border: 1px solid rgba(255, 107, 0, 0.3);
+            border-radius: 8px;
+            background: rgba(255, 107, 0, 0.05);
+            color: #ffffff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-input::placeholder {
+            color: #999999;
+        }
+
+        .newsletter-input:focus {
+            outline: none;
+            border-color: #ff6b00;
+            background: rgba(255, 107, 0, 0.1);
+            box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.1);
+        }
+
+        .newsletter-btn {
+            padding: 1rem;
+            background: linear-gradient(135deg, #ff6b00, #ff8533);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-btn:hover {
+            background: linear-gradient(135deg, #ff8533, #ff6b00);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 0, 0.3);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 107, 0, 0.2);
+            padding: 2rem 0;
+        }
+
+        .footer-bottom-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #999999;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-bottom-links a {
+            color: #999999;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom-links a:hover {
+            color: #ff6b00;
+        }
     </style>
+    <link rel="stylesheet" href="responsive.css">
 </head>
 
 <body>
     <nav id="navbar">
         <div class="nav-container">
-            <a href="#" class="logo">Ravana.ai</a>
+            <a href="index.html" class="logo">
+                <div class="logo-image"><img src="pictures/logo_icon.png"></div>
+                Ravana.ai
+            </a>
             <ul class="nav-links">
                 <li><a href="index.html" class="back-button">← Back to Home</a></li>
             </ul>
@@ -911,8 +1135,84 @@
     </main>
 
     <footer class="footer">
-        <div class="footer-content">
-            <p>&copy; 2025 Ravana Chatbot. Preserving culture through innovation. All rights reserved.</p>
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- Company Info -->
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-image"><img src="pictures/logo_icon.png"></div>
+                        <span class="logo-text">Ravana Chatbot</span>
+                    </div>
+                    <p class="footer-description">
+                        Revolutionizing conversations with AI-powered chatbots that understand, learn, and adapt to
+                        create meaningful interactions.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn">💼</a>
+                        <a href="#" aria-label="GitHub">🔧</a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="chatbot.html">Chatbot</a></li>
+                        <li><a href="colour.html">Colouring</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="aboutus.html">About us</a></li>
+                        <li><a href="awards.html">Awards</a></li>
+                    </ul>
+                </div>
+
+                <!-- GitHub Profile -->
+                <div class="footer-section">
+                    <h3>GitHub</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://github.com/Ian-Chin">Ian</a></li>
+                        <li><a href="https://github.com/Bowie-owo">Bowie</a></li>
+                        <li><a href="https://github.com/Cheang-Zhi-Lin">ZhiLin</a></li>
+                        <li><a href="https://github.com/RitchNoob">Ritchie</a></li>
+                    </ul>
+                </div>
+
+                <!-- LinkedIn Profile -->
+                <div class="footer-section">
+                    <h3>LinkedIn</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://www.linkedin.com/in/ian-chin-jun-sheng-721364270/">Ian</a></li>
+                        <li><a href="https://www.linkedin.com/in/bowie-chong-yu-shin-660598282/">Bowie</a></li>
+                        <li><a href="https://www.linkedin.com/in/cheang-zhi-lin-63b452325/">ZhiLin</a></li>
+                        <li><a href="https://www.linkedin.com/in/ritchie-boon-win-yew-551297217/">Ritchie</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="footer-section">
+                    <h3>Stay Updated</h3>
+                    <p class="newsletter-description">
+                        Get the latest updates on AI technology and chatbot innovations.
+                    </p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" class="newsletter-input">
+                        <button class="newsletter-btn">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 Ravana Chatbot. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy</a>
+                        <a href="#">Terms</a>
+                        <a href="#">Cookies</a>
+                        <a href="#">Accessibility</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
 
