@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,9 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="responsive.css">
     <link rel="icon" href="pictures/logo_icon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
     <nav id="navbar">
         <div class="nav-container">
@@ -29,7 +32,8 @@
     <main class="main-content">
         <div class="chatbot-header">
             <h1>Chat with Ravana AI</h1>
-            <p>Discover the fascinating world of Malaysian Wayang Kulit through interactive conversations with our AI-powered storyteller.</p>
+            <p>Discover the fascinating world of Malaysian Wayang Kulit through interactive conversations with our
+                AI-powered storyteller.</p>
         </div>
 
         <div class="chatbot-container">
@@ -38,7 +42,7 @@
                     <typebot-standard style="width: 100%; height: 750px; border-radius: 15px;"></typebot-standard>
                 </div>
 
-                
+
             </div>
 
             <div class="features-preview">
@@ -84,72 +88,6 @@
                 <!-- Company Info -->
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <span class="logo-icon">🤖</span>
-                        <span class="logo-text">Ravana Chatbot</span>
-                    </div>
-                    <p class="footer-description">
-                        Revolutionizing conversations with AI-powered chatbots that understand, learn, and adapt to create meaningful interactions.
-                    </p>
-                    <div class="social-links">
-                        <a href="#" aria-label="LinkedIn">💼</a>
-                        <a href="#" aria-label="GitHub">🔧</a>
-                    </div>
-                </div>
-
-                <!-- Quick Links -->
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="chatbot.html">Chatbot</a></li>
-                        <li><a href="colour.html">Colouring</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="aboutus.html">About us</a></li>
-                        <li><a href="awards.html">Awards</a></li>
-                    </ul>
-                </div>
-
-                <!-- GitHub Profile -->
-                <div class="footer-section">
-                    <h3>GitHub</h3>
-                    <ul class="footer-links">
-                        <li><a href="https://github.com/Ian-Chin">Ian</a></li>
-                        <li><a href="https://github.com/Bowie-owo">Bowie</a></li>
-                        <li><a href="https://github.com/Cheang-Zhi-Lin">ZhiLin</a></li>
-                        <li><a href="https://github.com/RitchNoob">Ritchie</a></li>
-                    </ul>
-                </div>
-
-                <!-- LinkedIn Profile -->
-                <div class="footer-section">
-                    <h3>LinkedIn</h3>
-                    <ul class="footer-links">
-                        <li><a href="https://www.linkedin.com/in/ian-chin-jun-sheng-721364270/">Ian</a></li>
-                        <li><a href="https://www.linkedin.com/in/bowie-chong-yu-shin-660598282/">Bowie</a></li>
-                        <li><a href="https://www.linkedin.com/in/cheang-zhi-lin-63b452325/">ZhiLin</a></li>
-                        <li><a href="https://www.linkedin.com/in/ritchie-boon-win-yew-551297217/">Ritchie</a></li>
-                    </ul>
-                </div>
-
-                <!-- Newsletter -->
-                <div class="footer-section">
-                    <h3>Stay Updated</h3>
-                    <p class="newsletter-description">
-                        Get the latest updates on AI technology and chatbot innovations.
-                    </p>
-                    <div class="newsletter-form">
-                        <input type="email" placeholder="Enter your email" class="newsletter-input">
-                        <button class="newsletter-btn">Subscribe</button>
-                    </div>
-                </div>
-            </div>
-
-        <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-content">
-                <!-- Company Info -->
-                <div class="footer-section">
-                    <div class="footer-logo">
                         <div class="logo-image"><img src="pictures/logo_icon.png"></div>
                         <span class="logo-text">Ravana Chatbot</span>
                     </div>
@@ -158,8 +96,7 @@
                         create meaningful interactions.
                     </p>
                     <div class="social-links">
-                        <a href="#" aria-label="LinkedIn">💼</a>
-                        <a href="#" aria-label="GitHub">🔧</a>
+                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7330600838303752192/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin" style="color: #ffa200;"></i></a>
                     </div>
                 </div>
 
@@ -198,15 +135,27 @@
                     </ul>
                 </div>
 
-                <!-- Newsletter -->
+                <!-- Feedback -->
                 <div class="footer-section">
-                    <h3>Stay Updated</h3>
+                    <h3>Share Your Feedback</h3>
                     <p class="newsletter-description">
-                        Get the latest updates on AI technology and chatbot innovations.
+                        Help us improve by sharing your thoughts and suggestions about our platform.
                     </p>
-                    <div class="newsletter-form">
-                        <input type="email" placeholder="Enter your email" class="newsletter-input">
-                        <button class="newsletter-btn">Subscribe</button>
+                    <button class="newsletter-btn" onclick="openFeedbackForm()">Give Feedback</button>
+                </div>
+
+                <!-- Feedback Popup Form -->
+                <div id="feedbackForm" class="feedback-popup">
+                    <div class="feedback-content">
+                        <span class="close-btn" onclick="closeFeedbackForm()">×</span>
+                        <h2>We Value Your Feedback</h2>
+                        <form action="https://formsubmit.co/withianchin@gmail.com" method="POST">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="text" name="name" placeholder="Your Name" class="feedback-input" required>
+                            <textarea name="message" placeholder="Your Feedback" class="feedback-textarea"
+                                required></textarea>
+                            <button type="submit" class="feedback-submit">Submit</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -234,6 +183,14 @@
     </script>
 
     <script>
+
+        function openFeedbackForm() {
+            document.getElementById("feedbackForm").style.display = "flex";
+        }
+
+        function closeFeedbackForm() {
+            document.getElementById("feedbackForm").style.display = "none";
+        }
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -299,25 +256,25 @@
 
         // Add hover effects to action cards
         document.querySelectorAll('.action-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
+            card.addEventListener('mouseenter', function () {
                 this.style.transform = 'translateY(-8px) scale(1.02)';
             });
-            
-            card.addEventListener('mouseleave', function() {
+
+            card.addEventListener('mouseleave', function () {
                 this.style.transform = 'translateY(0) scale(1)';
             });
         });
 
         // Add click effect to action cards
         document.querySelectorAll('.action-card').forEach(card => {
-            card.addEventListener('click', function(e) {
+            card.addEventListener('click', function (e) {
                 // Create ripple effect
                 const ripple = document.createElement('span');
                 const rect = this.getBoundingClientRect();
                 const size = Math.max(rect.width, rect.height);
                 const x = e.clientX - rect.left - size / 2;
                 const y = e.clientY - rect.top - size / 2;
-                
+
                 ripple.style.position = 'absolute';
                 ripple.style.width = ripple.style.height = size + 'px';
                 ripple.style.left = x + 'px';
@@ -327,11 +284,11 @@
                 ripple.style.transform = 'scale(0)';
                 ripple.style.animation = 'ripple 0.6s linear';
                 ripple.style.pointerEvents = 'none';
-                
+
                 this.style.position = 'relative';
                 this.style.overflow = 'hidden';
                 this.appendChild(ripple);
-                
+
                 setTimeout(() => {
                     ripple.remove();
                 }, 600);
@@ -354,11 +311,11 @@
         window.addEventListener('load', () => {
             const embedArea = document.getElementById('chatbotEmbed');
             embedArea.style.opacity = '0.8';
-            
+
             setTimeout(() => {
                 embedArea.style.opacity = '1';
                 embedArea.style.transform = 'scale(1.01)';
-                
+
                 setTimeout(() => {
                     embedArea.style.transform = 'scale(1)';
                 }, 200);
@@ -366,4 +323,5 @@
         });
     </script>
 </body>
+
 </html>

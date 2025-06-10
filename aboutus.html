@@ -936,8 +936,85 @@
         .footer-bottom-links a:hover {
             color: #ff6b00;
         }
+
+        .feedback-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+
+        .feedback-content {
+            background: #1a1a1a;
+            border: 1px solid rgba(255, 107, 0, 0.4);
+            border-radius: 15px;
+            padding: 2rem;
+            width: 90%;
+            max-width: 400px;
+            color: #fff;
+            position: relative;
+            box-shadow: 0 0 30px rgba(255, 107, 0, 0.2);
+        }
+
+        .feedback-content h2 {
+            color: #ff6b00;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .feedback-input,
+        .feedback-textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 107, 0, 0.3);
+            background: rgba(255, 107, 0, 0.05);
+            color: white;
+            font-size: 1rem;
+        }
+
+        .feedback-textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .feedback-submit {
+            width: 100%;
+            padding: 0.8rem;
+            background: linear-gradient(135deg, #ff6b00, #ff8533);
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .feedback-submit:hover {
+            background: linear-gradient(135deg, #ff8533, #ff6b00);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 0, 0.3);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            color: #ff6b00;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
     </style>
     <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
@@ -1010,8 +1087,8 @@
                             <span class="skill-tag">TypeBot</span>
                         </div>
                         <div class="team-links">
-                            <a href="#" class="team-link">💼</a>
-                            <a href="#" class="team-link">🔧</a>
+                            <a href="https://www.linkedin.com/in/ian-chin-jun-sheng-721364270/" class="team-link"><i class="fa-brands fa-linkedin" style="color: #ffa200;"></i></a>
+                            <a href="https://github.com/Ian-Chin" class="team-link"><i class="fa-brands fa-github" style="color: #ffa200;"></i></a>
                         </div>
                     </div>
 
@@ -1030,8 +1107,8 @@
                             <span class="skill-tag">Leadership</span>
                         </div>
                         <div class="team-links">
-                            <a href="#" class="team-link">💼</a>
-                            <a href="#" class="team-link">🔧</a>
+                            <a href="https://www.linkedin.com/in/bowie-chong-yu-shin-660598282/" class="team-link"><i class="fa-brands fa-linkedin" style="color: #ffa200;"></i></a>
+                            <a href="https://github.com/Bowie-owo" class="team-link"><i class="fa-brands fa-github" style="color: #ffa200;"></i></a>
                         </div>
                     </div>
 
@@ -1049,8 +1126,8 @@
                             <span class="skill-tag">Knowledge Base</span>
                         </div>
                         <div class="team-links">
-                            <a href="#" class="team-link">💼</a>
-                            <a href="#" class="team-link">🔧</a>
+                            <a href="https://www.linkedin.com/in/cheang-zhi-lin-63b452325/" class="team-link"><i class="fa-brands fa-linkedin" style="color: #ffa200;"></i></a>
+                            <a href="https://github.com/Cheang-Zhi-Lin" class="team-link"><i class="fa-brands fa-github" style="color: #ffa200;"></i></a>
                         </div>
                     </div>
 
@@ -1068,8 +1145,8 @@
                             <span class="skill-tag">TypeBot</span>
                         </div>
                         <div class="team-links">
-                            <a href="#" class="team-link">💼</a>
-                            <a href="#" class="team-link">🔧</a>
+                            <a href="https://www.linkedin.com/in/ritchie-boon-win-yew-551297217/" class="team-link"><i class="fa-brands fa-linkedin" style="color: #ffa200;"></i></a>
+                            <a href="https://github.com/RitchNoob"" class="team-link"><i class="fa-brands fa-github" style="color: #ffa200;"></i></a>
                         </div>
                     </div>
 
@@ -1086,8 +1163,7 @@
                             <span class="skill-tag">Information Technology</span>
                         </div>
                         <div class="team-links">
-                            <a href="#" class="team-link">💼</a>
-                            <a href="#" class="team-link">🔧</a>
+                            <a href="https://www.linkedin.com/in/assoc-prof-ts-dr-vinothini-kasinathan-b66278a6/" class="team-link"><i class="fa-brands fa-linkedin" style="color: #ffa200;"></i></a>
                         </div>
                     </div>
 
@@ -1104,8 +1180,7 @@
                             <span class="skill-tag">Information Technology</span>
                         </div>
                         <div class="team-links">
-                            <a href="#" class="team-link">💼</a>
-                            <a href="#" class="team-link">🔧</a>
+                            <a href="http://linkedin.com/in/nur-amira-abdul-majid-07a1a7289/" class="team-link"><i class="fa-brands fa-linkedin" style="color: #ffa200;"></i></a>
                         </div>
                     </div>
                 </div>
@@ -1148,8 +1223,7 @@
                         create meaningful interactions.
                     </p>
                     <div class="social-links">
-                        <a href="#" aria-label="LinkedIn">💼</a>
-                        <a href="#" aria-label="GitHub">🔧</a>
+                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7330600838303752192/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin" style="color: #ffa200;"></i></a>
                     </div>
                 </div>
 
@@ -1188,15 +1262,27 @@
                     </ul>
                 </div>
 
-                <!-- Newsletter -->
+                <!-- Feedback -->
                 <div class="footer-section">
-                    <h3>Stay Updated</h3>
+                    <h3>Share Your Feedback</h3>
                     <p class="newsletter-description">
-                        Get the latest updates on AI technology and chatbot innovations.
+                        Help us improve by sharing your thoughts and suggestions about our platform.
                     </p>
-                    <div class="newsletter-form">
-                        <input type="email" placeholder="Enter your email" class="newsletter-input">
-                        <button class="newsletter-btn">Subscribe</button>
+                    <button class="newsletter-btn" onclick="openFeedbackForm()">Give Feedback</button>
+                </div>
+
+                <!-- Feedback Popup Form -->
+                <div id="feedbackForm" class="feedback-popup">
+                    <div class="feedback-content">
+                        <span class="close-btn" onclick="closeFeedbackForm()">×</span>
+                        <h2>We Value Your Feedback</h2>
+                        <form action="https://formsubmit.co/withianchin@gmail.com" method="POST">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="text" name="name" placeholder="Your Name" class="feedback-input" required>
+                            <textarea name="message" placeholder="Your Feedback" class="feedback-textarea"
+                                required></textarea>
+                            <button type="submit" class="feedback-submit">Submit</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -1217,6 +1303,14 @@
     </footer>
 
     <script>
+
+        function openFeedbackForm() {
+            document.getElementById("feedbackForm").style.display = "flex";
+        }
+
+        function closeFeedbackForm() {
+            document.getElementById("feedbackForm").style.display = "none";
+        }
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1309,8 +1403,7 @@
         // Add ripple effect to team links
         document.querySelectorAll('.team-link').forEach(link => {
             link.addEventListener('click', function (e) {
-                e.preventDefault();
-
+                // Only add ripple, but don’t block the link
                 const ripple = document.createElement('span');
                 const rect = this.getBoundingClientRect();
                 const size = Math.max(rect.width, rect.height);

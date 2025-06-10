@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,9 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="responsive.css">
     <link rel="icon" href="pictures/logo_icon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
     <nav id="navbar">
         <div class="nav-container">
@@ -39,7 +42,8 @@
     <section class="hero" id="home">
         <div class="hero-content">
             <h1 class="floating">Ravana Reimagined</h1>
-            <p>Wayang Kulit Malaysia, Unveiling Malaysian Art<br>Go on a journey to uncover Ravana's secrets with an AI Chatbot.</p>
+            <p>Wayang Kulit Malaysia, Unveiling Malaysian Art<br>Go on a journey to uncover Ravana's secrets with an AI
+                Chatbot.</p>
             <div class="hero-buttons">
                 <a href="chatbot.html" class="btn btn-primary">Start Chatting</a>
                 <a href="#features" class="btn btn-secondary">Learn More</a>
@@ -57,27 +61,32 @@
             <div class="main-feature-card">
                 <span class="main-feature-icon">📖</span>
                 <h3>StoryTelling</h3>
-                <p>Ravana guides users through engaging Malaysian wayang kulit stories using vivid narrative techniques.</p>
+                <p>Ravana guides users through engaging Malaysian wayang kulit stories using vivid narrative techniques.
+                </p>
             </div>
             <div class="main-feature-card">
                 <span class="main-feature-icon">⚡</span>
                 <h3>Quizzes</h3>
-                <p>Test your knowledge about traditional shadow puppetry with fun, interactive quizzes powered by Ravana.</p>
+                <p>Test your knowledge about traditional shadow puppetry with fun, interactive quizzes powered by
+                    Ravana.</p>
             </div>
             <div class="main-feature-card">
                 <span class="main-feature-icon">🎥</span>
                 <h3>Video Showcase</h3>
-                <p>Ravana provides curated video content to immerse users in the visual world of wayang kulit performances.</p>
+                <p>Ravana provides curated video content to immerse users in the visual world of wayang kulit
+                    performances.</p>
             </div>
             <div class="main-feature-card">
                 <span class="main-feature-icon">🎮</span>
                 <h3>Virtual Gallery</h3>
-                <p>Explore a digital gallery of iconic pugit ppets and scenes, with Ravana offering insightful commentary.</p>
+                <p>Explore a digital gallery of iconic pugit ppets and scenes, with Ravana offering insightful
+                    commentary.</p>
             </div>
             <div class="main-feature-card">
                 <span class="main-feature-icon">🎨</span>
                 <h3>Virtual Colouring</h3>
-                <p>Ravana encourages creativity by allowing users to digitally paint and personalize their own puppets.</p>
+                <p>Ravana encourages creativity by allowing users to digitally paint and personalize their own puppets.
+                </p>
             </div>
             <div class="main-feature-card">
                 <span class="main-feature-icon">🎯</span>
@@ -97,11 +106,11 @@
                         <span class="logo-text">Ravana Chatbot</span>
                     </div>
                     <p class="footer-description">
-                        Revolutionizing conversations with AI-powered chatbots that understand, learn, and adapt to create meaningful interactions.
+                        Revolutionizing conversations with AI-powered chatbots that understand, learn, and adapt to
+                        create meaningful interactions.
                     </p>
                     <div class="social-links">
-                        <a href="#" aria-label="LinkedIn">💼</a>
-                        <a href="#" aria-label="GitHub">🔧</a>
+                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7330600838303752192/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin" style="color: #ffa200;"></i></a>
                     </div>
                 </div>
 
@@ -140,15 +149,27 @@
                     </ul>
                 </div>
 
-                <!-- Newsletter -->
+                <!-- Feedback -->
                 <div class="footer-section">
-                    <h3>Stay Updated</h3>
+                    <h3>Share Your Feedback</h3>
                     <p class="newsletter-description">
-                        Get the latest updates on AI technology and chatbot innovations.
+                        Help us improve by sharing your thoughts and suggestions about our platform.
                     </p>
-                    <div class="newsletter-form">
-                        <input type="email" placeholder="Enter your email" class="newsletter-input">
-                        <button class="newsletter-btn">Subscribe</button>
+                    <button class="newsletter-btn" onclick="openFeedbackForm()">Give Feedback</button>
+                </div>
+
+                <!-- Feedback Popup Form -->
+                <div id="feedbackForm" class="feedback-popup">
+                    <div class="feedback-content">
+                        <span class="close-btn" onclick="closeFeedbackForm()">×</span>
+                        <h2>We Value Your Feedback</h2>
+                        <form action="https://formsubmit.co/withianchin@gmail.com" method="POST">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="text" name="name" placeholder="Your Name" class="feedback-input" required>
+                            <textarea name="message" placeholder="Your Feedback" class="feedback-textarea"
+                                required></textarea>
+                            <button type="submit" class="feedback-submit">Submit</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -168,7 +189,15 @@
         </div>
     </footer>
 
- <script>
+    <script>
+
+        function openFeedbackForm() {
+            document.getElementById("feedbackForm").style.display = "flex";
+        }
+
+        function closeFeedbackForm() {
+            document.getElementById("feedbackForm").style.display = "none";
+        }
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -205,24 +234,24 @@
 
         // Add interactive hover effects to feature cards
         document.querySelectorAll('.feature-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
+            card.addEventListener('mouseenter', function () {
                 this.style.transform = 'translateY(-10px) scale(1.02)';
             });
-            
-            card.addEventListener('mouseleave', function() {
+
+            card.addEventListener('mouseleave', function () {
                 this.style.transform = 'translateY(0) scale(1)';
             });
         });
 
         // Add click effect to buttons
         document.querySelectorAll('.btn, .cta-button').forEach(button => {
-            button.addEventListener('click', function(e) {
+            button.addEventListener('click', function (e) {
                 const ripple = document.createElement('span');
                 const rect = this.getBoundingClientRect();
                 const size = Math.max(rect.width, rect.height);
                 const x = e.clientX - rect.left - size / 2;
                 const y = e.clientY - rect.top - size / 2;
-                
+
                 ripple.style.position = 'absolute';
                 ripple.style.width = ripple.style.height = size + 'px';
                 ripple.style.left = x + 'px';
@@ -232,11 +261,11 @@
                 ripple.style.transform = 'scale(0)';
                 ripple.style.animation = 'ripple 0.6s linear';
                 ripple.style.pointerEvents = 'none';
-                
+
                 this.style.position = 'relative';
                 this.style.overflow = 'hidden';
                 this.appendChild(ripple);
-                
+
                 setTimeout(() => {
                     ripple.remove();
                 }, 600);
@@ -256,4 +285,5 @@
         document.head.appendChild(style);
     </script>
 </body>
+
 </html>
