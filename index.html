@@ -110,7 +110,8 @@
                         create meaningful interactions.
                     </p>
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7330600838303752192/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin" style="color: #ffa200;"></i></a>
+                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7330600838303752192/"
+                            aria-label="LinkedIn"><i class="fa-brands fa-linkedin" style="color: #ffa200;"></i></a>
                     </div>
                 </div>
 
@@ -158,18 +159,48 @@
                     <button class="newsletter-btn" onclick="openFeedbackForm()">Give Feedback</button>
                 </div>
 
-                <!-- Feedback Popup Form -->
+                <!-- Updated Feedback Popup Form -->
                 <div id="feedbackForm" class="feedback-popup">
                     <div class="feedback-content">
                         <span class="close-btn" onclick="closeFeedbackForm()">×</span>
                         <h2>We Value Your Feedback</h2>
-                        <form action="https://formsubmit.co/withianchin@gmail.com" method="POST">
+                        <form id="feedbackFormSubmit" action="https://formsubmit.co/withianchin@gmail.com"
+                            method="POST">
+                            <!-- FormSubmit Configuration -->
                             <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_template" value="box">
+                            <input type="hidden" name="_subject" value="New Feedback for Ravana.ai">
+                            <input type="hidden" name="_next" value="javascript:void(0)">
+                            <input type="hidden" name="_autoresponse"
+                                value="Thank you for your feedback! We appreciate your input and will review it carefully.">
+
+                            <!-- Form Fields -->
                             <input type="text" name="name" placeholder="Your Name" class="feedback-input" required>
+                            <input type="email" name="email" placeholder="Your Email (optional)" class="feedback-input">
+                            <select name="feedback_type" class="feedback-input" required>
+                                <option value="">Select Feedback Type</option>
+                                <option value="Bug Report">Bug Report</option>
+                                <option value="Feature Request">Feature Request</option>
+                                <option value="General Feedback">General Feedback</option>
+                                <option value="Suggestion">Suggestion</option>
+                                <option value="Complaint">Complaint</option>
+                                <option value="Compliment">Compliment</option>
+                            </select>
                             <textarea name="message" placeholder="Your Feedback" class="feedback-textarea"
                                 required></textarea>
-                            <button type="submit" class="feedback-submit">Submit</button>
+
+                            <button type="submit" class="feedback-submit">
+                                <span class="submit-text">Submit Feedback</span>
+                                <span class="loading-text" style="display: none;">Sending...</span>
+                            </button>
                         </form>
+
+                        <!-- Success Message -->
+                        <div id="successMessage" class="success-message" style="display: none;">
+                            <div class="success-icon">✓</div>
+                            <h3>Thank You!</h3>
+                            <p>Your feedback has been sent successfully. We appreciate your input!</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -190,14 +221,90 @@
     </footer>
 
     <script>
-
         function openFeedbackForm() {
             document.getElementById("feedbackForm").style.display = "flex";
+            document.body.style.overflow = "hidden"; // Prevent background scrolling
         }
 
         function closeFeedbackForm() {
             document.getElementById("feedbackForm").style.display = "none";
+            document.body.style.overflow = "auto"; // Restore scrolling
+
+            // Reset form and hide success message
+            document.getElementById("feedbackFormSubmit").reset();
+            document.getElementById("feedbackFormSubmit").style.display = "block";
+            document.getElementById("successMessage").style.display = "none";
         }
+
+        // Enhanced form submission handling
+        document.getElementById("feedbackFormSubmit").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const submitBtn = this.querySelector('.feedback-submit');
+            const submitText = submitBtn.querySelector('.submit-text');
+            const loadingText = submitBtn.querySelector('.loading-text');
+
+            // Show loading state
+            submitText.style.display = 'none';
+            loadingText.style.display = 'inline';
+            submitBtn.disabled = true;
+            submitBtn.style.opacity = '0.7';
+
+            // Create FormData object
+            const formData = new FormData(this);
+
+            // Submit form via fetch
+            fetch(this.action, {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => {
+                    // Reset button state
+                    submitText.style.display = 'inline';
+                    loadingText.style.display = 'none';
+                    submitBtn.disabled = false;
+                    submitBtn.style.opacity = '1';
+
+                    if (response.ok) {
+                        // Show success message
+                        document.getElementById("feedbackFormSubmit").style.display = "none";
+                        document.getElementById("successMessage").style.display = "block";
+
+                        // Auto close after 3 seconds
+                        setTimeout(() => {
+                            closeFeedbackForm();
+                        }, 3000);
+                    } else {
+                        throw new Error('Network response was not ok');
+                    }
+                })
+                .catch(error => {
+                    // Reset button state
+                    submitText.style.display = 'inline';
+                    loadingText.style.display = 'none';
+                    submitBtn.disabled = false;
+                    submitBtn.style.opacity = '1';
+
+                    // Show error alert
+                    alert('Sorry, there was an error sending your feedback. Please try again.');
+                    console.error('Error:', error);
+                });
+        });
+
+        // Close popup when clicking outside
+        document.getElementById("feedbackForm").addEventListener("click", function (e) {
+            if (e.target === this) {
+                closeFeedbackForm();
+            }
+        });
+
+        // Close popup with Escape key
+        document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape" && document.getElementById("feedbackForm").style.display === "flex") {
+                closeFeedbackForm();
+            }
+        });
+
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -284,6 +391,3 @@
         `;
         document.head.appendChild(style);
     </script>
-</body>
-
-</html>
