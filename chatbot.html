@@ -39,10 +39,8 @@
         <div class="chatbot-container">
             <div class="chatbot-wrapper glow-effect">
                 <div class="chatbot-embed-area" id="chatbotEmbed">
-                    <typebot-standard style="width: 100%; height: 750px; border-radius: 15px;"></typebot-standard>
+                    <typebot-standard style="width: 100%; height: 800px;"></typebot-standard>
                 </div>
-
-
             </div>
 
             <div class="features-preview">
@@ -207,6 +205,14 @@
             </div>
         </div>
     </footer>
+
+    <!-- Typebot Integration Script -->
+    <script type="module">
+        import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0/dist/web.js';
+        Typebot.initStandard({
+            typebot: "ravana-chatbot-n9apw8n"
+        });
+    </script>
 
     <script>
         function openFeedbackForm() {
